@@ -13,7 +13,7 @@ RSpec.describe Torrent, type: :model do
       let(:torrents_downloads) { described_class.torrent_waiting_for_download }
       it 'should show torrents waiting for download' do
         mock = instance_double(
-          Transmission::Client::Torrent,
+          ::Transmission::Client::Torrent,
           id: collection.torrents.last.data[:id]
         )
         expect(Rails.cache).to receive(:fetch)
