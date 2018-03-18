@@ -1,0 +1,22 @@
+# Sample configuration file for Sidekiq.
+# Options here can still be overridden by cmd line args.
+# Place this file at config/sidekiq.yml and Sidekiq will
+# pick it up automatically.
+---
+:verbose: false
+:concurrency: 10
+
+# Set timeout to 8 on Heroku, longer if you manage your own systems.
+:queues:
+  - transmission_download_monitor
+  - verify_cancel_torrent_job
+
+# you can override concurrency based on environment
+production:
+  :concurrency: 10
+
+development:
+  :concurrency: 10
+
+:limits:
+  transmission_download_monitor: 1

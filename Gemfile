@@ -19,16 +19,39 @@ gem 'puma', '~> 3.7'
 
 # http client
 gem 'rest-client'
+
+# jobs
+gem 'sidekiq'
+gem 'sidekiq-limit_fetch'
+
+# cron
+gem 'sidekiq-scheduler'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+# cache
+gem 'redis-rails'
+
+
 # support webpack
 gem 'webpacker', '~> 3.2'
 
+# pagination
+gem 'kaminari'
+
+gem 'mechanize'
+
+
+# Share With Javascript
+
+gem 'gon'
+gem 'rabl-rails'
+
+
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
@@ -42,6 +65,17 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.7'
+  gem 'rspec-mocks'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'factory_bot'
+
+end
+
+group :test do
+  gem 'rails-controller-testing'
+  gem 'database_cleaner'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do

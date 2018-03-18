@@ -1,15 +1,22 @@
 import { h } from "hyperapp";
 
 const state = {
-	count: 0
+	gon: () => gon.collection
 }
 const actions = {
-	up: value => state => ({ count: state.count + value })
+  collection: () => gon.collection,
+	up: value => (state, actions) => {
+    console.log(state.gon())
+  }
 }
+
+
+
 const view = (state, actions) =>
   <div>
   	<h1>{state.count}</h1>
-  	<button onclick={() => actions.up(1)}>+</button>
+  	<input value={state.gon().name} />
+    <button onclick={() => actions.up()}>ok</button>
   </div>
 
 export default { state, actions, view }

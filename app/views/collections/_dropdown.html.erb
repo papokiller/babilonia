@@ -1,0 +1,22 @@
+<div class="dropdown">
+	<div class="dropdown-trigger">
+		<div aria-haspopup="true" aria-controls="dropdown-menu2">
+			<span><%=collection.name%></span>
+
+			<span class="icon is-small">
+				<i class="fas fa-angle-down" aria-hidden="true"></i>
+			</span>
+		</div>
+	</div>
+	<div class="dropdown-menu" id="dropdown-menu2" role="menu">
+		<div class="dropdown-content">
+			<a href="#" class="dropdown-item">
+				View Collection
+			</a>
+			<a href="#" class="dropdown-item">
+				Settings
+			</a>
+			<%=link_to 'Remove', collection_path(collection), class: 'dropdown-item', method: :delete%>
+		</div>
+	</div>
+</div>

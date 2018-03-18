@@ -1,3 +1,63 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<a href="/home/two">hola</a>
+<div class="column">
+  <div class="box">
+    <ul class="list-statistics">
+
+     <li>
+        <span class="count"><%=@collections_count%></span>
+        <span class="desc">Collections</span>
+      </li>
+
+      <li>
+        <span class="count"><%=@torrents_downloads_count%></span>
+        <span class="desc">Downloads</span>
+      </li>
+
+      <li>
+        <span class="count"><%=@torrents_failds_count%></span>
+        <span class="desc">Downloads Failed</span>
+      </li>
+
+      <li>
+        <span class="count">thinking</span>
+        <span class="desc">Speed Rate</span>
+      </li>
+
+      <li>
+        <span class="count" style="color: red;">coming soon</span>
+        <span class="desc">Video Processing</span>
+      </li>
+
+    </ul>
+	</div>
+</div>
+
+<div class="column">
+	<div class="box">
+      <span class="tag is-light ">Torrent Downloads: [<%=@torrents.values.flatten.length%>] </span>
+      <br/> <br/>
+
+      <input  type="hidden" id="download-list"/>
+		  <div class="collections">
+		  	<%@torrents.each do |group| %>
+         <span class="tag is-light is-medium">
+            <strong>Collection: &nbsp; </strong> <%=group[0]%>
+            [<%=group[1].length%>]
+          </span>
+			  	<%group[1].each do |torrent|%>
+            <div class="panel-block">
+              <div class="flex-1">
+                <%=torrent.name%> <br/>
+                <strong>Torrent</strong>: <%=torrent.percent_done%>%, <strong>convert </strong>: 0%
+                <progress class="progress is-success" value="<%=torrent.percent_done.to_i%>" max="100"></progress>
+              </div>
+
+            </div>
+          <%end%>
+
+          <br/>
+
+			  <%end%>
+
+		  </div>
+	</div>
+</div>

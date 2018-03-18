@@ -3,7 +3,9 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^3.2.2",
+    "bulma": "^0.6.2",
     "hyperapp": "^1.1.2",
+    "rails-ujs": "^5.1.5",
     "turbolinks": "^5.1.1"
   },
   "devDependencies": {

@@ -1,0 +1,39 @@
+<div class="column">
+	<div class="box">
+		<%=link_to 'New Collection', new_collection_path, class: 'button'%>
+
+		  <div class="panel-block">
+		    <p class="control has-icons-left">
+		       <%=form_for :search, method: :get do |f| %>
+            <%=f.text_field :search, placeholder: 'search', class: 'input', value: params[:search]&.fetch(:search)%>
+          <%end%>
+		      <span class="icon is-small is-left">
+		        <i class="fas fa-search"></i>
+		      </span>
+		    </p>
+		  </div>
+
+		  <p class="panel-tabs">
+		    <a class="is-active">all</a>
+		    <a>video</a>
+		    <a>music</a>
+		    <a>software</a>
+		  </p>
+
+		  <div class="collections">
+		  	<%@collections.each do |collection| %>
+			  	<div class="panel-block  collection-option">
+			  	  <div class="flex-1">
+			  	  	<%=render 'dropdown', collection: collection%>
+			  	  </div>
+			  	  <div class="is-pulled-right">
+			  	  	Last Update: <%=collection.updated_at%>
+			  	  </div>
+			  	</div>
+
+			  <%end%>
+
+		  </div>
+		  <%= paginate @collections %>
+	</div>
+</div>

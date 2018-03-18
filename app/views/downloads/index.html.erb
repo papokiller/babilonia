@@ -1,0 +1,19 @@
+<div class="column">
+	<div class="box">
+      <input  type="hidden" id="download-list"/>
+		  <div class="collections">
+		  	<%@torrents.each do |torrent| %>
+			  	<div class="panel-block  collection-option">
+			  	  <div class="flex-1">
+			  	  	<%= torrent.name%> <br/>
+              <strong>Torrent</strong>: <%=torrent.percent_done%>%, <strong>convert </strong>: 0%
+              <progress class="progress is-success" value="<%=torrent.percent_done.to_i%>" max="100"></progress>
+			  	  </div>
+
+			  	</div>
+
+			  <%end%>
+
+		  </div>
+	</div>
+</div>

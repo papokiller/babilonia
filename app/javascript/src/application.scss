@@ -1,0 +1,40 @@
+@import "./scss/list-statistics.scss";
+body {
+		background-color: #f1f1f1;
+}
+.app {
+	min-height: 100vh;
+	min-width: 100vw;
+	display: flex;
+	position: relative;
+}
+
+.sidemenu {
+	box-shadow: 0 0 10px rgba(0,0,0, .5);
+	width: 18vw !important;
+	height: 100vh;
+	position:fixed;
+	background-color: white;
+}
+
+.is-container {
+	margin-left: 18.4vw;
+	overflow: hidden;
+}
+
+.flex-1 {
+	flex: 1;
+}
+
+.paginations	 {
+	padding: 1em;
+}
+
+.collection-option {
+	transition: .5s;
+
+	&:hover {
+		box-shadow: 0 0 1px rgba(0,0,0,.5);
+		cursor: pointer;
+	}
+}

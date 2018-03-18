@@ -1,0 +1,13 @@
+transmission_downloads_monitor_job:
+  every: '5s'
+  class: TransmissionDownloadsMonitorJob
+  queue: high
+  description: >
+    list downloads torrent
+
+verify_cancel_torrent_job:
+  every: '5s'
+  class: VerifyCancelTorrentJob
+  queue: high
+  description: >
+    verify downloads torrent

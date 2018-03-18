@@ -1,0 +1,49 @@
+<div class="column">
+  <div class="box">
+    <center>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Whore_of_Babylon.jpg/300px-Whore_of_Babylon.jpg"
+      />
+     <div class="column is-6">
+       <input value="<%=params[:keywords]%>" id="search-torrents" type="text" class="input" placeholder="search"/>
+     </div>
+    </center>
+
+    <div class="collections">
+      <%@torrents.each do |torrent| %>
+        <div class="panel-block  collection-option">
+          <div class="flex-1">
+            [EZTV] - <%=torrent.name%>
+          </div>
+          <div class="is-pulled-right">
+            <%=link_to 'Download', add_torrent_collections_path(magnet: torrent.magnet), class: 'button', remote: true, method: :post%>
+          </div>
+        </div>
+      <%end%>
+		</div>
+
+	</div>
+</div>
+
+<div id="addTorrentAddCollection" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <%=form_for :torrent, url: add_torrent_to_collection_path, remote: true do |f|%>
+        <div class="field">
+          <%=f.label "Name"%>
+          <div class="control">
+            <div class="select">
+              <%=f.collection_select :collection_id, Collection.all, :id, :name%>
+              <%=f.hidden_field :torrent%>
+            </div>
+          </div>
+
+        </div>
+
+        <%=f.submit "Ok", class: 'button'%>
+      <%end%>
+    </div>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>

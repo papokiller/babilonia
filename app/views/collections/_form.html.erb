@@ -1,0 +1,23 @@
+<div class="column">
+	<div class="box">
+		<%=form_for @collection do |field| %>
+
+			<div class="field">
+			  <%=field.label "Name"%>
+			  <div class="control has-icons-left has-icons-right">
+			    <%=field.text_field :name, class: 'input'%>
+			  </div>
+
+			</div>
+
+			<div class="field is-grouped">
+			  <div class="control">
+			    <button class="button is-link">Submit</button>
+			  </div>
+			  <div class="control">
+			    <%=link_to "Back", :back, class: 'button'%>
+			  </div>
+			</div>
+		<%end%>
+	</div>
+</div>

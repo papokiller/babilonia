@@ -3,10 +3,41 @@
   <head>
     <title>Babilonia</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= Gon::Base.render_data %>
     <%= javascript_pack_tag 'application' %>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="app">
+        <div class="column is-2 sidemenu">
+          <aside class="menu">
+            <p class="menu-label">
+              General
+            </p>
+            <ul class="menu-list">
+              <li><%=link_to 'Home', root_path%></li>
+              <li><%=link_to 'Search', search_path%></li>
+              <li><%=link_to 'Collections', collections_path%></li>
+            </ul>
+
+            <p class="menu-label">
+              Developer Zone
+            </p>
+            <ul class="menu-list">
+              <li><a>Integrations</a></li>
+              <li><a>Export Data</a></li>
+              <li><a>Servers</a></li>
+            </ul>
+          </aside>
+        </div>
+        <div class="column is-container">
+            <%=yield%>
+        </div>
+    </div>
+
   </body>
 </html>
