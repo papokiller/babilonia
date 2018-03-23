@@ -1,0 +1,35 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    hostname: localhost
+  redis:
+    image: redis
+    volumes:
+      - ./tmp/redis:/data
+  web:
+    build: .
+    command: sh ./startup.sh
+    environment:
+      - DB_HOST=db
+      - DB_USERNAME=postgres
+      - TRANSMISSION_SERVER=transmission:9091
+    volumes:
+      - .:/myapp
+      - ./transmission:/root/.config/transmission-daemon
+    ports:
+      - "3000:3000"
+    links:
+      - db
+      - redis
+      - transmission
+  transmission:
+    build:
+      context: ./transmission
+    ports:
+      - "9091:9091"
+    tty: true
+    volumes:
+      - ./transmission:/root/.config/transmission-daemon

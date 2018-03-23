@@ -10,7 +10,7 @@ class Transmission::Client::TorrentList
   private
 
   def get_torrents_rpc(fields, headers)
-    response = RestClient.post('http://localhost:9091/transmission/rpc', payload(fields), headers)
+    response = RestClient.post("#{ENV['TRANSMISSION_SERVER']}/transmission/rpc", payload(fields), headers)
     JSON.parse(response.body)['arguments']['torrents']
         .map { |raw_torrent| build_torrent(raw_torrent) }
   end

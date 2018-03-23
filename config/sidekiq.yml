@@ -17,6 +17,7 @@ production:
 
 development:
   :concurrency: 10
+  logfile: ./log/sidekiq_development.log
 
 :limits:
   transmission_download_monitor: 1

@@ -10,3 +10,5 @@ script:
   - bundle exec rspec
 services:
   - redis-server
+env:
+  - TRANSMISSION_SERVER=transmission:9091

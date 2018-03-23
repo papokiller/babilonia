@@ -9,10 +9,11 @@ class Transmission::Client::TorrentDownload
   private
 
   def download_rpc(path, headers)
-    request = RestClient.post('http://localhost:9091/transmission/rpc', payload(path), headers)
+    request = RestClient.post("#{ENV['TRANSMISSION_SERVER']}/transmission/rpc", payload(path), headers)
     request_response = JSON.parse(request.body)
     check_if_valid_torrent(request_response)
     check_if_duplicate_torrent(request_response)
+    Rails.logger.warn OpenStruct.new request_response['arguments']['torrent-added']
     OpenStruct.new request_response['arguments']['torrent-added']
   end
 

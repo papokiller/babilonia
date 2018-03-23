@@ -3,7 +3,7 @@ require 'rest-client'
 class Transmission::Client::Authenticate
   def self.get_token(&block)
     begin
-      RestClient.post('http://localhost:9091/transmission/rpc', {})
+      RestClient.post("#{ENV['TRANSMISSION_SERVER']}/transmission/rpc", {})
     rescue RestClient::ExceptionWithResponse => e
       if e.response.code == 409
         session = e.response.headers[:x_transmission_session_id]

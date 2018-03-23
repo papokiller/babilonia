@@ -98,3 +98,8 @@ bower.json
 /node_modules
 yarn-debug.log*
 .yarn-integrity
+
+# transmission
+transmission/*
+!transmission/settings.json
+!transmission/Dockerfile
