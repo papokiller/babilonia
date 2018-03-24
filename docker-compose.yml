@@ -33,3 +33,4 @@ services:
     tty: true
     volumes:
       - ./transmission:/root/.config/transmission-daemon
+      - ./transmission/downloads:/downloads
