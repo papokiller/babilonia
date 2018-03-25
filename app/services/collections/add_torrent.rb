@@ -20,7 +20,7 @@ class Collections::AddTorrent
   end
 
   def torrent_client
-    @torrent_client ||= Transmission::Client.new
+    Transmission::Client::Rpc
   end
 
 end

@@ -8,7 +8,7 @@
 
 # Set timeout to 8 on Heroku, longer if you manage your own systems.
 :queues:
-  - transmission_download_monitor
+  - torrent_update_metadata
   - verify_cancel_torrent_job
 
 # you can override concurrency based on environment
@@ -20,4 +20,4 @@ development:
   logfile: ./log/sidekiq_development.log
 
 :limits:
-  transmission_download_monitor: 1
+  torrent_update_metadata: 1

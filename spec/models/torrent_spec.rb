@@ -16,8 +16,7 @@ RSpec.describe Torrent, type: :model do
           ::Transmission::Client::Torrent,
           id: collection.torrents.last.data['id']
         )
-        expect(Rails.cache).to receive(:fetch)
-          .with('transmissions-downloads')
+        expect(Transmission::Client::Rpc).to receive(:torrents)
           .and_return([mock])
         expect(torrents_downloads.values.flatten.length).to eq(1)
       end

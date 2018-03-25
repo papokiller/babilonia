@@ -1,5 +1,4 @@
-require 'rest-client'
-class Transmission::Client
+class Transmission::Client2
 
   def torrents
     Transmission::Client::TorrentList.new.get_torrents

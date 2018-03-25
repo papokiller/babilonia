@@ -9,6 +9,7 @@ class Transmission::Client::Torrent
     @total_size = total_size
     @added_date = added_date
     @is_finished = is_finished
+    @files = files
     @percent_done = (percent_done * 100).round(1)
   end
 

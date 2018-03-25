@@ -1,9 +1,9 @@
-transmission_downloads_monitor_job:
+torrent_update_metadata_job:
   every: '5s'
-  class: TransmissionDownloadsMonitorJob
+  class: TorrentUpdateMetadataJob
   queue: high
   description: >
-    list downloads torrent
+    update torrents metadata
 
 verify_cancel_torrent_job:
   every: '5s'
