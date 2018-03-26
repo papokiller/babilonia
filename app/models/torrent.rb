@@ -5,13 +5,13 @@ class Torrent < ApplicationRecord
              optional:  true
 
   def self.torrent_waiting_for_download
-    merge_torrents_cache = lambda do |k, v|
-      [k, from_transmission.select { |t| v.map { |tv| tv.data['id'] }.include?(t.id) }]
-    end
+    torrents = from_transmission
     where(status: 0)
       .includes(:collection)
       .group_by { |torrent| torrent.collection.name }
-      .map(&merge_torrents_cache)
+      .map do |k, v|
+        [k, torrents.select { |t| v.map { |tv| tv.data['id'] }.include?(t.id) }]
+      end
       .to_h
   end
 
