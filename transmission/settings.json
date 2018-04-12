@@ -66,5 +66,5 @@
     "upload-slots-per-torrent": 14,
     "utp-enabled": true,
     "watch-dir": "/watch",
-    "watch-dir-enabled": true
+    "watch-dir-enabled": false
 }

@@ -13,10 +13,10 @@ class Eztv::Search
     torrents_elements_selector = 'tr[name="hover"]'
     page.search(torrents_elements_selector)
         .map { |element| build_torrent(element.search('td')) }
-        .group_by { |torrent| torrent.name.gsub(/[0-9]/, '') }
-        .values
-        .map { |torrents| torrents.sort { |a, b| episode(b) <=> episode(a) } }
-        .flatten
+        # .group_by { |torrent| torrent.name.gsub(/[0-9]/, '') }
+        # .values
+        # .map { |torrents| torrents.sort { |a, b| episode(b) <=> episode(a) } }
+        # .flatten
   end
 
   def episode(torrent)

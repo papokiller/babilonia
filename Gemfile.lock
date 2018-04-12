@@ -78,6 +78,8 @@ GEM
     hashdiff (0.3.7)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    httparty (0.16.1)
+      multi_xml (>= 0.5.2)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -121,6 +123,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
+    multi_xml (0.6.0)
     net-http-digest_auth (1.4.1)
     net-http-persistent (2.9.4)
     netrc (0.11.0)
@@ -128,6 +131,8 @@ GEM
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     ntlm-http (0.1.1)
+    omdbapi (0.3.0)
+      httparty (~> 0.13)
     pg (1.0.0)
     public_suffix (3.0.2)
     puma (3.11.2)
@@ -293,6 +298,7 @@ DEPENDENCIES
   kaminari
   listen (>= 3.0.5, < 3.2)
   mechanize
+  omdbapi
   pg (>= 0.18, < 2.0)
   puma (~> 3.7)
   rabl-rails

@@ -13,5 +13,9 @@ Rails.application.routes.draw do
        as: :add_torrent_to_collection
 
   resources :downloads, only: [:index]
+
+
+  get 'google', to: 'search_page#index'
+
   mount Sidekiq::Web => '/sidekiq'
 end

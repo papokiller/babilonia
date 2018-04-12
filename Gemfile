@@ -41,8 +41,11 @@ gem 'webpacker', '~> 3.2'
 # pagination
 gem 'kaminari'
 
+#web scrapings
 gem 'mechanize'
 
+# IMDB Client
+gem 'omdbapi'
 
 # Share With Javascript
 
