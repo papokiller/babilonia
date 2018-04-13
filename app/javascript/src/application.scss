@@ -1,4 +1,6 @@
 @import "./scss/list-statistics.scss";
+@import "./scss/search.scss";
+
 body {
 		background-color: #f1f1f1;
 }
@@ -37,9 +39,4 @@ body {
 		box-shadow: 0 0 1px rgba(0,0,0,.5);
 		cursor: pointer;
 	}
-}
-
-
-.search-page {
-  background-color: red;
 }

@@ -1,7 +1,7 @@
 #!/bin/sh
 rm -f tmp/pids/server.pid
 
-#start up sidekiq
+# startup sidekiq
 bundle exec sidekiq -C config/sidekiq.yml -d
 
 # startup rails
