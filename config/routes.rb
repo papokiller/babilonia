@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'search_page#index'
   get 'search', to: 'search#index'
-  get 'search/:keywords', to: 'search#index'
+  #get 'search/:keywords', to: 'search#index'
   resources :collections do
     post :add_torrent_to_collection, on: :collection, as: :add_torrent
     resources :torrents, controller: :collections_torrents
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
 
   get 'google', to: 'search_page#index'
+  get '/search/:keyword', to: 'search_page#show'
 
   namespace :search do
     resources :suggestions, only: [:show]

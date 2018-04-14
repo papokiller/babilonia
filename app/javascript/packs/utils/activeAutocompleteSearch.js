@@ -26,7 +26,7 @@ export default () => {
       setSuggestions(data.data.data)
     }
     const checkAutoComplete = (e) => {
-      if (e.target.value.length > 2) {
+      if (e.target.value.length > 1) {
         cancelPreviusRequest()
         getAutoComplete(e.target.value)
       } else {
