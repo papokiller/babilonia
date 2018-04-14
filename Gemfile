@@ -34,7 +34,6 @@ gem 'jbuilder', '~> 2.5'
 # cache
 gem 'redis-rails'
 
-
 # support webpack
 gem 'webpacker', '~> 3.2'
 
@@ -51,7 +50,6 @@ gem 'omdbapi'
 
 gem 'gon'
 gem 'rabl-rails'
-
 
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 4.0'

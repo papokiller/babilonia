@@ -17,5 +17,9 @@ Rails.application.routes.draw do
 
   get 'google', to: 'search_page#index'
 
+  namespace :search do
+    resources :suggestions, only: [:show]
+  end
+
   mount Sidekiq::Web => '/sidekiq'
 end
